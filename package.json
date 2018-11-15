@@ -1,0 +1,114 @@
+{
+  "name": "lifion-verify-deps",
+  "version": "1.0.0",
+  "description": "Verifies that installed NPM modules are the latest currently available version.",
+  "keywords": [
+    "check",
+    "dependencies",
+    "installed",
+    "modules",
+    "npm",
+    "packages",
+    "update",
+    "upgrade",
+    "verify",
+    "version"
+  ],
+  "author": "Mackenzie Turner <turner.mackenzie.m@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifion/lifion-verify-deps.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lifion/lifion-verify-deps/issues"
+  },
+  "homepage": "https://github.com/lifion/lifion-verify-deps#readme",
+  "main": "./lib/index.js",
+  "bin": {
+    "lifion-verify-deps": "./bin/cli.js"
+  },
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "scripts": {
+    "eslint": "eslint . --ext .js,.json --cache",
+    "format": "prettier --write '**/*.{md,js,json}' '!reports/**/*.{js,json}'",
+    "jest": "JEST_JUNIT_OUTPUT=./reports/junit/js-test-results.xml jest",
+    "jest-watch": "npm run jest -- --watch --coverageReporters=html",
+    "lint": "eslint . --ext .js,.json --format junit -o ./reports/junit/js-lint-results.xml",
+    "prepare": "check-engines",
+    "test": "npm run jest -- --ci --runInBand && codecov",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "semver": "^5.6.0"
+  },
+  "devDependencies": {
+    "auto-changelog": "^1.10.1",
+    "check-engines": "^1.5.0",
+    "eslint": "^5.9.0",
+    "eslint-config-lifion": "^1.0.2",
+    "husky": "^1.1.4",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.15.2"
+  },
+  "auto-changelog": {
+    "commitLimit": false,
+    "template": "./templates/CHANGELOG.hbs"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coverageDirectory": "../reports",
+    "coverageReporters": [
+      "cobertura",
+      "text",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 0,
+        "branches": 0,
+        "functions": 0,
+        "lines": 0
+      }
+    },
+    "rootDir": "./lib",
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true
+  },
+  "renovate": {
+    "branchPrefix": "feature/renovate-",
+    "engines": {
+      "enabled": false
+    },
+    "extends": [
+      "config:base"
+    ],
+    "rangeStrategy": "bump"
+  }
+}
