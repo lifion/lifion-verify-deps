@@ -26,12 +26,14 @@
   "homepage": "https://github.com/lifion/lifion-verify-deps#readme",
   "main": "./lib/index.js",
   "bin": {
-    "lifion-verify-deps": "./bin/cli.js"
+    "lifion-verify-deps": "./bin/lifion-verify-deps.js"
   },
   "engines": {
     "node": ">=8.6.0"
   },
   "scripts": {
+    "build-docs": "jsdoc2md -t ./templates/README.hbs ./lib/*.js > ./README.md && git add ./README.md",
+    "build-docs-watch": "npm-watch build-docs",
     "eslint": "eslint . --ext .js,.json --cache",
     "format": "prettier --write '**/*.{md,js,json}' '!reports/**/*.{js,json}'",
     "jest": "JEST_JUNIT_OUTPUT=./reports/junit/js-test-results.xml jest",
@@ -39,7 +41,7 @@
     "lint": "eslint . --ext .js,.json --format junit -o ./reports/junit/js-lint-results.xml",
     "prepare": "check-engines",
     "test": "npm run jest -- --ci --runInBand && codecov",
-    "verify-deps": "bin/cli.js",
+    "verify-deps": "./bin/lifion-verify-deps.js",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -55,7 +57,9 @@
     "husky": "^1.1.4",
     "jest": "^23.6.0",
     "jest-junit": "^5.2.0",
+    "jsdoc-to-markdown": "^4.0.1",
     "lint-staged": "^7.3.0",
+    "npm-watch": "^0.4.0",
     "prettier": "^1.15.2"
   },
   "auto-changelog": {

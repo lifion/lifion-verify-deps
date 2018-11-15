@@ -5,9 +5,8 @@
 const verifyDeps = require('../lib');
 
 async function run() {
-  const currentDir = process.cwd();
   try {
-    await verifyDeps(currentDir);
+    await verifyDeps({ dir: process.cwd() });
     process.exit(0);
   } catch (err) {
     console.error(err.message);
