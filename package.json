@@ -39,6 +39,7 @@
     "lint": "eslint . --ext .js,.json --format junit -o ./reports/junit/js-lint-results.xml",
     "prepare": "check-engines",
     "test": "npm run jest -- --ci --runInBand && codecov",
+    "verify-deps": "bin/cli.js",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -48,12 +49,13 @@
   "devDependencies": {
     "auto-changelog": "^1.10.1",
     "check-engines": "^1.5.0",
+    "codecov": "^3.1.0",
     "eslint": "^5.9.0",
     "eslint-config-lifion": "^1.0.2",
     "husky": "^1.1.4",
     "jest": "^23.6.0",
     "jest-junit": "^5.2.0",
-    "lint-staged": "^7.0.0",
+    "lint-staged": "^7.3.0",
     "prettier": "^1.15.2"
   },
   "auto-changelog": {
