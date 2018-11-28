@@ -1,0 +1,12 @@
+{
+  "extends": "lifion",
+  "rules": {
+    "global-require": "off",
+    "import/no-dynamic-require": "off",
+    "no-console": "off",
+    "no-process-exit": "off",
+    "node/shebang": "off",
+    "security/detect-child-process": "off",
+    "security/detect-non-literal-require": "off"
+  }
+}
