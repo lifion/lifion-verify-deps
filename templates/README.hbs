@@ -7,13 +7,23 @@ Verifies that installed NPM modules are the latest currently available version.
 To install the module:
 
 ```sh
-npm install lifion-verify-deps --save
+npm install lifion-verify-deps --global
 ```
 
-To run:
+To run command:
 
 ```sh
 lifion-verify-deps
+```
+
+To use as module:
+
+```sh
+const verifyDeps = require('lifion-verify-deps');
+
+verifyDeps({ dir: './path-to/project-directory' })
+  .then(() => /* all installed packages up to date */)
+  .catch((err) => /* there are packages to be updated */)
 ```
 
 ## API Reference
