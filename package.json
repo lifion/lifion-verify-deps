@@ -1,6 +1,6 @@
 {
   "name": "lifion-verify-deps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Verifies that installed NPM modules are the latest currently available version.",
   "keywords": [
     "check",
