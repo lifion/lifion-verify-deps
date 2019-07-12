@@ -38,9 +38,9 @@ Verifies the dependencies listed in the package.json of the given directory.
 
 | Param            | Type                | Description                                                  |
 | ---------------- | ------------------- | ------------------------------------------------------------ |
-| [options]        | <code>Object</code> | Optional parameters.                                         |
+| [options]        | <code>object</code> | Optional parameters.                                         |
 | [options.dir]    | <code>string</code> | The path where to look for the package.json file.            |
-| [options.logger] | <code>Object</code> | A logger instance, with a similar API as the console object. |
+| [options.logger] | <code>object</code> | A logger instance, with a similar API as the console object. |
 
 ## License
 
