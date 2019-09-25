@@ -22,7 +22,7 @@ jobs:
         with:
           version: ${{ matrix.node_version }}
       - name: Install
-        run: npm ci --loglevel=error
+        run: npm ci --loglevel=error || npm i --loglevel=error
         env:
           DISABLE_OPENCOLLECTIVE: true
       - name: Run linter
