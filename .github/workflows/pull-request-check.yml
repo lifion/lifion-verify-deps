@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [8, 10, 12]
+        node_version: [8, 10, 12, 13]
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - name: Clone repository
@@ -20,15 +20,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          version: ${{ matrix.node_version }}
+          node_version: ${{ matrix.node_version }}.x
       - name: Install
-        run: npm ci --loglevel=error || npm i --loglevel=error
+        run: npm ci --loglevel=error
         env:
           DISABLE_OPENCOLLECTIVE: true
       - name: Run linter
         run: npm run eslint
       - name: Run tests
-        run: npm test
+        run: npm test -- --ci --runInBand && codecov
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
           CI: true

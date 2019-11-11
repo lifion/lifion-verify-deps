@@ -1,6 +1,6 @@
 {
   "name": "lifion-verify-deps",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Verifies that installed NPM modules are the latest currently available version.",
   "keywords": [
     "check",
@@ -41,9 +41,8 @@
     "build-docs-watch": "npm-watch build-docs",
     "eslint": "eslint . --ext .js,.json --ignore-pattern='!.*.*'",
     "format": "prettier --write '**/*.{md,js,json}' '!coverage/**/*.{js,json}'",
-    "jest": "jest -c ./.jest.json",
     "prepare": "check-engines",
-    "test": "npm run jest -- --ci --runInBand && codecov",
+    "test": "jest -c ./.jest.json",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
@@ -79,7 +78,7 @@
   },
   "@lifion/core-commons": {
     "template": "public",
-    "updated": "2019-08-27T00:08:54.648Z",
-    "version": "2.3.3"
+    "updated": "2019-11-11T20:44:29.068Z",
+    "version": "2.3.4"
   }
 }
