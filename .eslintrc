@@ -1,5 +1,13 @@
 {
   "extends": "lifion",
+  "overrides": [
+    {
+      "files": ["lib/index.test.js"],
+      "rules": {
+        "jest/no-export": ["warn"]
+      }
+    }
+  ],
   "rules": {
     "global-require": "off",
     "import/no-dynamic-require": "off",
