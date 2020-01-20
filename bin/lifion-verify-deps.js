@@ -14,14 +14,15 @@ if (argv.help) {
       'Checks existing dependencies for available updates',
       '',
       'Options:',
-      '--help           Display this help message and exit',
-      '--auto_upgrade    Automatically run all suggested upgrades'
+      '--help             Display this help message and exit',
+      '-u --auto-upgrade  Automatically run all suggested upgrades'
     ].join('\n')
   );
 }
 
 async function run() {
-  const { auto_upgrade: autoUpgrade } = argv;
+  const { 'auto-upgrade': autoUpgradeLong, u: autoUpgradeShort } = argv;
+  const autoUpgrade = autoUpgradeLong || autoUpgradeShort;
   try {
     await verifyDeps({ autoUpgrade, dir: process.cwd() });
     process.exit(0);
