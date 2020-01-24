@@ -28,7 +28,10 @@ jobs:
       - name: Run linter
         run: npm run eslint
       - name: Run tests
-        run: npm test -- --ci --runInBand && codecov
+        run: npm test -- --ci --runInBand
+        env:
+          CI: true
+      - name: Report coverage
+        run: npx codecov
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-          CI: true
