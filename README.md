@@ -36,12 +36,12 @@ Verifies the dependencies listed in the package.json of the given directory.
 
 **Kind**: Exported function
 
-| Param                 | Type                 | Description                                                  |
-| --------------------- | -------------------- | ------------------------------------------------------------ |
-| [options]             | <code>object</code>  | Optional parameters.                                         |
-| [options.autoUpgrade] | <code>boolean</code> | Automatically upgrade all suggested dependencies.            |
-| [options.dir]         | <code>string</code>  | The path where to look for the package.json file.            |
-| [options.logger]      | <code>object</code>  | A logger instance, with a similar API as the console object. |
+| Param                 | Type                 | Default            | Description                                                  |
+| --------------------- | -------------------- | ------------------ | ------------------------------------------------------------ |
+| [options]             | <code>object</code>  |                    | Optional parameters.                                         |
+| [options.autoUpgrade] | <code>boolean</code> | <code>false</code> | Automatically upgrade all suggested dependencies.            |
+| [options.dir]         | <code>string</code>  |                    | The path where to look for the package.json file.            |
+| [options.logger]      | <code>object</code>  |                    | A logger instance, with a similar API as the console object. |
 
 ## License
 
