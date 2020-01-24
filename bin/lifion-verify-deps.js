@@ -4,12 +4,13 @@
 
 const argv = require('minimist')(process.argv.slice(2));
 const verifyDeps = require('../lib');
+const { name } = require('../package.json');
 
 if (argv.help) {
   console.log(
     [
       '',
-      'Usage: lifion-verify-deps [options]',
+      `Usage: ${name} [options]`,
       '',
       'Checks existing dependencies for available updates',
       '',
@@ -18,11 +19,11 @@ if (argv.help) {
       '-u --auto-upgrade  Automatically run all suggested upgrades'
     ].join('\n')
   );
+  return;
 }
 
 async function run() {
-  const { 'auto-upgrade': autoUpgradeLong, u: autoUpgradeShort } = argv;
-  const autoUpgrade = autoUpgradeLong || autoUpgradeShort;
+  const autoUpgrade = argv['auto-upgrade'] || argv.u;
   try {
     await verifyDeps({ autoUpgrade, dir: process.cwd() });
     process.exit(0);
