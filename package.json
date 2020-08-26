@@ -60,7 +60,7 @@
     "husky": "^4.2.5",
     "jest": "^25.5.4",
     "jsdoc-to-markdown": "^5.0.3",
-    "lint-staged": "^10.2.11",
+    "lint-staged": "^10.2.13",
     "npm-watch": "^0.6.0",
     "prettier": "^1.19.1"
   },
