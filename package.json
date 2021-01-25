@@ -48,7 +48,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "minimist": "^1.2.5",
-    "semver": "^7.3.2"
+    "semver": "^7.3.4"
   },
   "devDependencies": {
     "auto-changelog": "^1.16.4",
