@@ -48,7 +48,8 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "minimist": "^1.2.5",
-    "semver": "^7.3.4"
+    "semver": "^7.3.4",
+    "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
     "auto-changelog": "^1.16.4",
