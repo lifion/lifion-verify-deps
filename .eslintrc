@@ -8,6 +8,9 @@
       }
     }
   ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "rules": {
     "global-require": "off",
     "import/no-dynamic-require": "off",
