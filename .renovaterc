@@ -1,7 +1,9 @@
 {
   "assignees": [
     "eaviles",
-    "kenzable"
+    "jennyEckstein",
+    "BizzlePop34"
+
   ],
   "automerge": true,
   "branchPrefix": "feature/renovate-",
