@@ -34,7 +34,7 @@
     "lifion-verify-deps": "./bin/lifion-verify-deps.js"
   },
   "engines": {
-    "node": ">=v10.23.3"
+    "node": ">=v10.24.0"
   },
   "scripts": {
     "build-docs": "jsdoc2md -t ./templates/README.hbs ./lib/*.js > ./README.md && git add ./README.md",
