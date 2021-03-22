@@ -17,7 +17,7 @@ if (argv.help) {
       '',
       'Options:',
       '--help             Display this help message and exit',
-      '-pre --pre-release Include pre-release dependencies',
+      '-p --pre-release Include pre-release dependencies',
       '-u --auto-upgrade  Automatically run all suggested upgrades'
     ].join('\n')
   );
@@ -26,7 +26,7 @@ if (argv.help) {
 
 async function run() {
   const autoUpgrade = argv['auto-upgrade'] || argv.u;
-  const includePreReleaseDependencies = argv['pre-release'] || argv.pre;
+  const includePreReleaseDependencies = argv['pre-release'] || argv.p;
   try {
     await verifyDeps({ autoUpgrade, dir: process.cwd(), includePreReleaseDependencies });
     process.exit(0);
