@@ -14,12 +14,14 @@
   ],
   "author": "Mackenzie Turner <turner.mackenzie.m@gmail.com>",
   "maintainers": [
-    "Chen Doron <Chen.Doron@ADP.com>",
+    "Bryan Oemler <Bryan.Oemler@ADP.com>",
     "Edgardo Avilés <Edgardo.Aviles@ADP.com>",
-    "Jenny Eckstein <Jenny.Eckstein@ADP.com>",
+    "Jenny Eckstein <Jenny.Eckstein@ADP.com>"
+  ],
+  "contributors": [
+    "Chen Doron <Chen.Doron@ADP.com>",
     "Zaid Masud <Zaid.Masud@ADP.com>"
   ],
-  "contributors": [],
   "license": "MIT",
   "repository": {
     "type": "git",
