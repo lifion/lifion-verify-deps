@@ -39,16 +39,16 @@
     "node": ">=v10.24.0"
   },
   "scripts": {
-    "build-docs": "jsdoc2md -t ./templates/README.hbs ./lib/*.js > ./README.md && git add ./README.md",
-    "build-docs-watch": "npm-watch build-docs",
-    "eslint": "eslint . --ext .js,.json --ignore-pattern='!.*.*'",
-    "format": "prettier --write '**/*.{md,js,json}' '!coverage/**/*.{js,json}'",
-    "prepare": "husky install",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
-    "test": "jest -c ./.jest.json",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "build-docs": "commons",
+    "build-types": "commons",
+    "check-types": "commons",
+    "clean-types": "commons",
+    "eslint": "commons",
+    "prepare": "commons",
+    "prepublishOnly": "npm run build-types && npm run prettier",
+    "prettier": "commons",
+    "test": "commons",
+    "version": "commons"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -57,19 +57,8 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "auto-changelog": "^2.3.0",
-    "chance": "^1.1.7",
-    "check-engines": "^1.5.0",
-    "codecov": "^3.8.3",
-    "eslint": "^7.32.0",
-    "eslint-config-lifion": "^2.1.1",
-    "husky": "^7.0.2",
-    "jest": "^27.1.0",
-    "jsdoc-to-markdown": "^7.0.1",
-    "lint-staged": "^11.1.2",
-    "npm-watch": "^0.11.0",
-    "pinst": "^2.1.6",
-    "prettier": "^2.3.2"
+    "chance": "^1.1.8",
+    "core-commons": "^1.0.0-alpha.0"
   },
   "watch": {
     "build-docs": {

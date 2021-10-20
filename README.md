@@ -31,17 +31,17 @@ verifyDeps({ dir: './path-to/project-directory' })
 <a name="exp_module_lifion-verify-deps--verifyDeps"></a>
 
 ### verifyDeps([options]) ⏏
+
 Verifies the dependencies listed in the package.json of the given directory.
 
-**Kind**: Exported function  
+**Kind**: Exported function
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| [options] | <code>Object</code> |  | Optional parameters. |
-| [options.autoUpgrade] | <code>boolean</code> | <code>false</code> | Automatically upgrade all suggested dependencies. |
-| [options.dir] | <code>string</code> |  | The path where to look for the package.json file. |
-| [options.logger] | <code>Object</code> |  | A logger instance, with a similar API as the console object. |
-
+| Param                 | Type                 | Default            | Description                                                  |
+| --------------------- | -------------------- | ------------------ | ------------------------------------------------------------ |
+| [options]             | <code>Object</code>  |                    | Optional parameters.                                         |
+| [options.autoUpgrade] | <code>boolean</code> | <code>false</code> | Automatically upgrade all suggested dependencies.            |
+| [options.dir]         | <code>string</code>  |                    | The path where to look for the package.json file.            |
+| [options.logger]      | <code>Object</code>  |                    | A logger instance, with a similar API as the console object. |
 
 ## License
 
