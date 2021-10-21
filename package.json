@@ -65,7 +65,7 @@
     "@types/semver": "^7.3.9",
     "@types/validate-npm-package-name": "^3.0.3",
     "chance": "^1.1.8",
-    "core-commons": "^1.0.0-alpha.0"
+    "core-commons": "^1.0.0-alpha.1"
   },
   "watch": {
     "build-docs": {
