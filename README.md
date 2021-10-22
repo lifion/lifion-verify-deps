@@ -136,19 +136,23 @@ Gets currently installed version for provided package name.
 <a name="module_lifion-verify-deps--verifyDeps..pushPkgs"></a>
 
 #### verifyDeps~pushPkgs(params) ⇒ <code>Array.&lt;Promise.&lt;PackageStatus&gt;&gt;</code>
+Builds list of packages to update.
+
 **Kind**: inner method of [<code>verifyDeps</code>](#exp_module_lifion-verify-deps--verifyDeps)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | params | <code>Object</code> | - |
-| params.dir | <code>string</code> | - |
-| params.logger | [<code>Logger</code>](#Logger) | - |
-| params.deps | <code>\*</code> | - |
-| params.type | <code>string</code> | - |
+| params.dir | <code>string</code> | directory location. |
+| params.logger | [<code>Logger</code>](#Logger) | logging tool. |
+| params.deps | <code>\*</code> | list of dependencies. |
+| params.type | <code>string</code> | type of dependency. |
 
 <a name="module_lifion-verify-deps--verifyDeps..getPkgIds"></a>
 
 #### verifyDeps~getPkgIds(filteredPkgs) ⇒ <code>string</code>
+Formats package name for installation.
+
 **Kind**: inner method of [<code>verifyDeps</code>](#exp_module_lifion-verify-deps--verifyDeps)  
 **Returns**: <code>string</code> - - concatenated 'name@latest' for provided package.  
 
