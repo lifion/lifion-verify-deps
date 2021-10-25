@@ -123,6 +123,7 @@ Finds valid upgrade version of the provided package name.
 Gets currently installed version for provided package name.
 
 **Kind**: inner method of [<code>verifyDeps</code>](#exp_module_lifion-verify-deps--verifyDeps)  
+**Returns**: <code>string</code> \| <code>null</code> - - installed version or null if not installed.  
 **Throws**:
 
 - <code>Error</code> - unable to find installed versions, try installing node modules by running `npm i`.
@@ -140,6 +141,7 @@ Gets currently installed version for provided package name.
 Builds list of packages to update.
 
 **Kind**: inner method of [<code>verifyDeps</code>](#exp_module_lifion-verify-deps--verifyDeps)  
+**Returns**: <code>Array.&lt;Promise.&lt;PackageStatus&gt;&gt;</code> - - npm package state.  
 
 | Param | Type | Description |
 | --- | --- | --- |
