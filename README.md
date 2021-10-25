@@ -74,6 +74,7 @@ Validates package name.
 Gets available versions for provided package name.
 
 **Kind**: inner method of [<code>verifyDeps</code>](#exp_module_lifion-verify-deps--verifyDeps)  
+**Returns**: <code>Promise.&lt;Array.&lt;string&gt;&gt;</code> - - list of available versions.  
 **Throws**:
 
 - <code>Error</code> - output failed JSON parse.
