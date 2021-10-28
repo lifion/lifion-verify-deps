@@ -5,7 +5,7 @@
   "files": [
     "bin",
     "lib",
-    "!**/lib/*.test.js"
+    "!**/*.test.js"
   ],
   "keywords": [
     "check",
