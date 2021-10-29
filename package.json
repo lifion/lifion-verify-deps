@@ -2,11 +2,6 @@
   "name": "lifion-verify-deps",
   "version": "2.0.0",
   "description": "Verifies that installed NPM modules are the latest currently available version.",
-  "files": [
-    "bin",
-    "lib",
-    "!**/*.test.js"
-  ],
   "keywords": [
     "check",
     "dependencies",
@@ -37,11 +32,16 @@
   },
   "homepage": "https://github.com/lifion/lifion-verify-deps#readme",
   "main": "./lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "!**/*.test.js"
+  ],
   "bin": {
     "lifion-verify-deps": "./bin/lifion-verify-deps.js"
   },
   "engines": {
-    "node": ">=v10.24.0"
+    "node": ">=v14"
   },
   "scripts": {
     "build-docs": "commons",
@@ -66,17 +66,5 @@
     "@types/validate-npm-package-name": "^3.0.3",
     "chance": "^1.1.8",
     "core-commons": "^1.0.0-alpha.3"
-  },
-  "watch": {
-    "build-docs": {
-      "patterns": [
-        "lib"
-      ]
-    }
-  },
-  "@lifion/core-commons": {
-    "template": "public",
-    "updated": "2019-11-11T20:44:29.068Z",
-    "version": "2.3.4"
   }
 }
