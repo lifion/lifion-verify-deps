@@ -1,13 +1,5 @@
 {
-  "extends": "lifion",
-  "overrides": [
-    {
-      "files": ["lib/index.test.js"],
-      "rules": {
-        "jest/no-export": ["warn"]
-      }
-    }
-  ],
+  "extends": "./node_modules/core-commons/shared/eslint.json",
   "rules": {
     "global-require": "off",
     "import/no-dynamic-require": "off",
@@ -16,5 +8,6 @@
     "node/shebang": "off",
     "security/detect-child-process": "off",
     "security/detect-non-literal-require": "off"
-  }
+  },
+  "overrides": [{ "files": ["lib/index.test.js"], "rules": { "jest/no-export": ["warn"] } }]
 }

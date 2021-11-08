@@ -1,6 +1,6 @@
 {
   "name": "lifion-verify-deps",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Verifies that installed NPM modules are the latest currently available version.",
   "keywords": [
     "check",
@@ -14,13 +14,15 @@
   ],
   "author": "Mackenzie Turner <turner.mackenzie.m@gmail.com>",
   "maintainers": [
-    "Chen Doron <Chen.Doron@ADP.com>",
+    "Anson Lam <Anson.Lam@ADP.com>",
     "Edgardo Avilés <Edgardo.Aviles@ADP.com>",
-    "Jenny Eckstein <Jenny.Eckstein@ADP.com>",
-    "Zaid Masud <Zaid.Masud@ADP.com>"
+    "Jenny Eckstein <Jenny.Eckstein@ADP.com>"
   ],
-  "contributors": [],
-  "license": "MIT",
+  "contributors": [
+    "Bryan Oemler <Bryan.Oemler@ADP.com>",
+    "Chen Doron <Chen.Doron@ADP.com>"
+  ],
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/lifion/lifion-verify-deps.git"
@@ -30,57 +32,39 @@
   },
   "homepage": "https://github.com/lifion/lifion-verify-deps#readme",
   "main": "./lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "!**/*.test.js"
+  ],
   "bin": {
     "lifion-verify-deps": "./bin/lifion-verify-deps.js"
   },
   "engines": {
-    "node": ">=v10.24.0"
+    "node": ">=v14"
   },
   "scripts": {
-    "build-docs": "jsdoc2md -t ./templates/README.hbs ./lib/*.js > ./README.md && git add ./README.md",
-    "build-docs-watch": "npm-watch build-docs",
-    "eslint": "eslint . --ext .js,.json --ignore-pattern='!.*.*'",
-    "format": "prettier --write '**/*.{md,js,json}' '!coverage/**/*.{js,json}'",
-    "prepare": "check-engines",
-    "test": "jest -c ./.jest.json",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "build-docs": "commons",
+    "build-types": "commons",
+    "check-types": "commons",
+    "clean-types": "commons",
+    "eslint": "commons",
+    "prepare": "commons",
+    "prepublishOnly": "npm run build-types && npm run prettier",
+    "prettier": "commons",
+    "test": "commons",
+    "version": "commons"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "minimist": "^1.2.5",
     "semver": "^7.3.5",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "auto-changelog": "^2.2.1",
-    "chance": "^1.1.7",
-    "check-engines": "^1.5.0",
-    "codecov": "^3.8.1",
-    "eslint": "^7.23.0",
-    "eslint-config-lifion": "^2.0.2",
-    "husky": "^5.2.0",
-    "jest": "^26.6.3",
-    "jsdoc-to-markdown": "^7.0.1",
-    "lint-staged": "^10.5.4",
-    "npm-watch": "^0.9.0",
-    "prettier": "^2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build-docs && lint-staged",
-      "pre-push": "npm run eslint && npm test"
-    }
-  },
-  "watch": {
-    "build-docs": {
-      "patterns": [
-        "lib"
-      ]
-    }
-  },
-  "@lifion/core-commons": {
-    "template": "public",
-    "updated": "2019-11-11T20:44:29.068Z",
-    "version": "2.3.4"
+    "@types/semver": "^7.3.9",
+    "@types/validate-npm-package-name": "^3.0.3",
+    "chance": "^1.1.8",
+    "core-commons": "^1.0.0-alpha.3"
   }
 }
