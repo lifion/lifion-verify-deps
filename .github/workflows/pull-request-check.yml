@@ -32,7 +32,3 @@ jobs:
         run: npm test -- --ci --runInBand
         env:
           CI: true
-      - name: Report coverage
-        run: npx codecov
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
