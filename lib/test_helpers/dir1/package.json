@@ -1,7 +1,0 @@
-{
-  "version": "46.45.44",
-  "dependencies": {
-    "foo1": "~46.45.44"
-  },
-  "devDependencies": {}
-}
