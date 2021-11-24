@@ -4,7 +4,8 @@
   "description": "Verifies that installed NPM modules are the latest currently available version.",
   "files": [
     "bin/lifion-verify-deps.js",
-    "lib/index.js"
+    "lib/index.js",
+    "lib/utils"
   ],
   "keywords": [
     "check",
