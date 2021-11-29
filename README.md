@@ -174,7 +174,7 @@ Filters out dependencies with locked versions.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| deps | <code>Object.&lt;string, any&gt;</code> | List of dependencies. |
+| deps | <code>Object.&lt;string, string&gt;</code> | List of dependencies. |
 
 
 ## License
