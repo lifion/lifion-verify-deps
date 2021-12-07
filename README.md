@@ -38,7 +38,7 @@ verifyDeps({ dir: './path-to/project-directory' })
         * [~getInstalledVersion(currentDir, name, logger)](#module_lifion-verify-deps--verifyDeps..getInstalledVersion) ⇒ <code>string</code> \| <code>null</code>
         * [~pushPkgs(params)](#module_lifion-verify-deps--verifyDeps..pushPkgs) ⇒ <code>Array.&lt;Promise.&lt;PackageStatus&gt;&gt;</code>
         * [~getPkgIds(filteredPkgs)](#module_lifion-verify-deps--verifyDeps..getPkgIds) ⇒ <code>string</code>
-        * [~removeLockedDependencies(deps)](#module_lifion-verify-deps--verifyDeps..removeLockedDependencies) ⇒ <code>Object</code>
+        * [~removeLockedDependencies(deps)](#module_lifion-verify-deps--verifyDeps..removeLockedDependencies) ⇒ <code>Object.&lt;string, string&gt;</code> \| <code>Object</code>
 
 <a name="exp_module_lifion-verify-deps--verifyDeps"></a>
 
@@ -147,7 +147,7 @@ Builds list of packages to update.
 | Param | Type | Description |
 | --- | --- | --- |
 | params | <code>Object</code> | Object with parameters. |
-| params.deps | <code>Object.&lt;string, any&gt;</code> | List of dependencies. |
+| params.deps | <code>Object.&lt;string, string&gt;</code> | List of dependencies. |
 | params.dir | <code>string</code> | Directory location. |
 | params.logger | [<code>Logger</code>](#Logger) | Logging tool. |
 | params.type | <code>string</code> | Type of dependency. |
@@ -166,11 +166,11 @@ Formats package name for installation.
 
 <a name="module_lifion-verify-deps--verifyDeps..removeLockedDependencies"></a>
 
-#### verifyDeps~removeLockedDependencies(deps) ⇒ <code>Object</code>
+#### verifyDeps~removeLockedDependencies(deps) ⇒ <code>Object.&lt;string, string&gt;</code> \| <code>Object</code>
 Filters out dependencies with locked versions.
 
 **Kind**: inner method of [<code>verifyDeps</code>](#exp_module_lifion-verify-deps--verifyDeps)  
-**Returns**: <code>Object</code> - List of dependencies excluding locked semver versions.  
+**Returns**: <code>Object.&lt;string, string&gt;</code> \| <code>Object</code> - List of dependencies excluding locked semver versions.  
 
 | Param | Type | Description |
 | --- | --- | --- |
