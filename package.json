@@ -5,7 +5,7 @@
   "files": [
     "bin/lifion-verify-deps.js",
     "lib/index.js",
-    "lib/utils"
+    "lib/utils.js"
   ],
   "keywords": [
     "check",
@@ -83,7 +83,7 @@
     "test": {
       "collectCoverageFrom": [
         "**/*.js",
-        "!**/utils/*.js"
+        "!**/utils.js"
       ]
     }
   }
