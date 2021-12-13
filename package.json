@@ -1,6 +1,6 @@
 {
   "name": "lifion-verify-deps",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Verifies that installed NPM modules are the latest currently available version.",
   "keywords": [
     "check",
@@ -64,7 +64,21 @@
   "devDependencies": {
     "@types/semver": "^7.3.9",
     "@types/validate-npm-package-name": "^3.0.3",
-    "chance": "^1.1.8",
     "core-commons": "^1.0.0-alpha.3"
+  },
+  "watch": {
+    "build-docs": {
+      "patterns": [
+        "lib"
+      ]
+    }
+  },
+  "core-commons": {
+    "test": {
+      "collectCoverageFrom": [
+        "**/*.js",
+        "!**/utils.js"
+      ]
+    }
   }
 }
