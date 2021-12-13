@@ -179,4 +179,4 @@ Filters out dependencies with locked versions.
 
 ## License
 
-[MIT](./LICENSE)
+[Apache-2.0](./LICENSE)
