@@ -1,6 +1,6 @@
 {
   "name": "lifion-verify-deps",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Verifies that installed NPM modules are the latest currently available version.",
   "keywords": [
     "check",
@@ -72,11 +72,6 @@
         "lib"
       ]
     }
-  },
-  "@lifion/core-commons": {
-    "template": "public",
-    "updated": "2019-11-11T20:44:29.068Z",
-    "version": "2.3.4"
   },
   "core-commons": {
     "test": {

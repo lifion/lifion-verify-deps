@@ -5,44 +5,11 @@ on:
       - main
 jobs:
   install-and-check:
-    name: Install & Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          check-latest: true
-          node-version: '14'
-      - name: Install
-        run: npm ci --loglevel=error
-        env:
-          DISABLE_OPENCOLLECTIVE: true
-      - name: Run linter
-        run: npm run eslint
-      - name: Run tests
-        run: npm test
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+    uses: lifion/core-commons/.github/workflows/publish-module.yml@main
+    secrets:
+      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+
   npm-publish:
-    name: NPM Publish
-    needs: install-and-check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          check-latest: true
-          node-version: '14'
-          registry-url: 'https://registry.npmjs.org'
-      - name: Install
-        run: npm ci --loglevel=error
-        env:
-          DISABLE_OPENCOLLECTIVE: true
-      - name: Publish
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+    uses: lifion/core-commons/.github/workflows/publish-module.yml@main
+    secrets:
+      NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
