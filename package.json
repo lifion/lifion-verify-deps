@@ -73,11 +73,6 @@
       ]
     }
   },
-  "@lifion/core-commons": {
-    "template": "public",
-    "updated": "2019-11-11T20:44:29.068Z",
-    "version": "2.3.4"
-  },
   "core-commons": {
     "test": {
       "collectCoverageFrom": [

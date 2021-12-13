@@ -9,5 +9,7 @@
     "security/detect-child-process": "off",
     "security/detect-non-literal-require": "off"
   },
-  "overrides": [{ "files": ["lib/index.test.js"], "rules": { "jest/no-export": ["warn"] } }]
+  "overrides": [
+    { "files": ["lib/index.test.js"], "rules": { "jest/no-export": ["warn"] } }
+  ]
 }

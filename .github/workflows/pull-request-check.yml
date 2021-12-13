@@ -1,4 +1,4 @@
-name: Pull Request Check
+name: Pull-Request Check
 on:
   push:
     branches:
@@ -8,31 +8,6 @@ on:
       - develop
 jobs:
   check:
-    name: Node ${{ matrix.node-version }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [14, 16, 17]
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          check-latest: true
-      - name: Install
-        run: npm ci --loglevel=error
-        env:
-          DISABLE_OPENCOLLECTIVE: true
-      - name: Run linter
-        run: npm run eslint
-      - name: Run tests
-        run: npm test -- --ci --runInBand
-        env:
-          CI: true
-      - name: Report coverage
-        run: npx codecov
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+    uses: lifion/core-commons/.github/workflows/pull-request-check.yml@main
+    secrets:
+      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
