@@ -7,9 +7,9 @@ jobs:
   install-and-check:
     uses: lifion/core-commons/.github/workflows/publish-module.yml@main
     secrets:
-      CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   npm-publish:
     uses: lifion/core-commons/.github/workflows/publish-module.yml@main
     secrets:
-      NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
