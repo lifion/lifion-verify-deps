@@ -59,7 +59,7 @@
     "chalk": "^4.1.2",
     "minimist": "^1.2.5",
     "semver": "^7.3.5",
-    "validate-npm-package-name": "^3.0.0"
+    "validate-npm-package-name": "^4.0.0"
   },
   "devDependencies": {
     "@types/semver": "^7.3.9",
